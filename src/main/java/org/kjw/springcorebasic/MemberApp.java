@@ -3,12 +3,12 @@ package org.kjw.springcorebasic;
 import org.kjw.springcorebasic.member.Grade;
 import org.kjw.springcorebasic.member.Member;
 import org.kjw.springcorebasic.member.MemberService;
-import org.kjw.springcorebasic.member.MemberServiceImpl;
 
 public class MemberApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
