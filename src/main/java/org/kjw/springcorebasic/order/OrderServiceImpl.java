@@ -3,13 +3,17 @@ package org.kjw.springcorebasic.order;
 import org.kjw.springcorebasic.discount.DiscountPolicy;
 import org.kjw.springcorebasic.member.Member;
 import org.kjw.springcorebasic.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
 
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
